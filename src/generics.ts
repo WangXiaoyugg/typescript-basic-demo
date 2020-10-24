@@ -31,3 +31,27 @@ const str = echoWithArr1('str')
 const obj = echoWithArr1({ length: 10, width: 10 })
 const arr2 = echoWithArr1([1, 2, 3])
 echoWithArr1(10)
+
+// 泛型和接口
+class Queue<T> {
+  private data = []
+  push(item: T) {
+    return this.data.push(item)
+  }
+  pop(): T {
+    return this.pop()
+  }
+}
+const q = new Queue<number>()
+q.push(1)
+q.pop().toFixed()
+
+interface KeyPair<T, U> {
+  key: T,
+  value: U,
+}
+
+let kp1: KeyPair<number, string> = { key: 1, value: 'a' }
+let kp2: KeyPair<string, number> = { key: 'b', value: 2 }
+
+let arr3: Array<number> = [1, 2, 3]
